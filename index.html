@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТЕПЛОКОНТУР — Тёплые дома из СИП-панелей в Глазове и Удмуртии</title>
+<meta name="description" content="Строительство тёплых домов из СИП-панелей под ключ в Глазове и Удмуртии. Продажа СИП-панелей и домокомплектов от производителя.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --graphite:#1e2328;
+  --graphite-dark:#15191d;
+  --graphite-light:#2a3038;
+  --white:#ffffff;
+  --off-white:#f5f7f6;
+  --emerald:#047857;
+  --emerald-light:#069a6f;
+  --emerald-dark:#035a43;
+  --gray-text:#b0b8bf;
+  --gray-text-dark:#8b939b;
+  --border:rgba(255,255,255,0.08);
+  --success:#10b981;
+  --warning:#f59e0b;
+  --error:#ef4444;
+  --radius:12px;
+  --radius-lg:20px;
+  --shadow:0 8px 32px rgba(0,0,0,0.3);
+  --shadow-emerald:0 8px 32px rgba(4,120,87,0.35);
+  --font:'Segoe UI','Inter',system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--graphite-dark);color:var(--white);line-height:1.5;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:80px 0;scroll-margin-top:70px}
+h1,h2,h3,h4{line-height:1.2;font-weight:700}
+img{max-width:100%;display:block}
+button,input,select,textarea{font-family:inherit;font-size:inherit}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(21,25,29,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:background 0.3s ease}
+header.scrolled{background:rgba(21,25,29,0.98)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-logo{font-size:1.25rem;font-weight:800;letter-spacing:1px;color:var(--white);display:flex;align-items:center;gap:8px}
+.nav-logo span{color:var(--emerald)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:0.9rem;color:var(--gray-text);transition:color 0.2s;position:relative}
+.nav-links a:hover{color:var(--white)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--emerald);transition:width 0.3s}
+.nav-links a:hover::after{width:100%}
+.nav-phone{font-size:1rem;font-weight:600;color:var(--white);white-space:nowrap}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.nav-burger span{width:24px;height:2px;background:var(--white);transition:all 0.3s}
+.nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:70px;position:relative;background:linear-gradient(135deg,var(--graphite-dark) 0%,var(--graphite) 50%,var(--graphite-dark) 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(4,120,87,0.18) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-15%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(4,120,87,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(4,120,87,0.15);border:1px solid rgba(4,120,87,0.3);border-radius:50px;font-size:0.85rem;color:var(--emerald-light);margin-bottom:24px}
+.hero-tag-dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:20px}
+.hero h1 span{color:var(--emerald)}
+.hero-sub{font-size:1.1rem;color:var(--gray-text);margin-bottom:36px;max-width:560px;line-height:1.6}
+.hero-advantages{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px}
+.hero-adv{display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--white)}
+.hero-adv-icon{width:36px;height:36px;border-radius:8px;background:rgba(4,120,87,0.15);display:flex;align-items:center;justify-content:center;color:var(--emerald);flex-shrink:0;font-size:1.1rem}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.hero-image{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+.hero-image img{width:100%;height:100%;object-fit:cover}
+.hero-image::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(21,25,29,0.5),transparent 60%)}
+.hero-badge{position:absolute;bottom:20px;left:20px;right:20px;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(21,25,29,0.88);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px}
+.hero-badge-num{font-size:1.5rem;font-weight:800;color:var(--emerald)}
+.hero-badge-text{font-size:0.8rem;color:var(--gray-text)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--radius);font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.25s ease;border:none;text-align:center}
+.btn-primary{background:var(--emerald);color:var(--white)}
+.btn-primary:hover{background:var(--emerald-light);transform:translateY(-2px);box-shadow:var(--shadow-emerald)}
+.btn-secondary{background:transparent;color:var(--white);border:2px solid var(--border)}
+.btn-secondary:hover{border-color:var(--emerald);background:rgba(4,120,87,0.1)}
+.btn-full{width:100%}
+
+/* SECTION HEADERS */
+.section-header{text-align:center;max-width:680px;margin:0 auto 48px}
+.section-label{display:inline-block;font-size:0.8rem;font-weight:600;color:var(--emerald-light);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-header h2{font-size:clamp(1.75rem,4vw,2.5rem);margin-bottom:16px}
+.section-header p{font-size:1rem;color:var(--gray-text)}
+
+/* QUIZ */
+.quiz{background:var(--graphite)}
+.quiz-card{max-width:640px;margin:0 auto;background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow)}
+.quiz-progress{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.quiz-progress-bar{flex:1;height:6px;background:var(--graphite-dark);border-radius:3px;overflow:hidden}
+.quiz-progress-fill{height:100%;background:var(--emerald);border-radius:3px;transition:width 0.4s ease;width:25%}
+.quiz-progress-text{font-size:0.85rem;color:var(--gray-text);white-space:nowrap}
+.quiz-step{display:none;animation:fadeIn 0.4s ease}
+.quiz-step.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.quiz-question{font-size:1.25rem;font-weight:700;margin-bottom:24px}
+.quiz-options{display:grid;gap:12px;margin-bottom:28px}
+.quiz-option{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--graphite-dark);border:2px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all 0.2s}
+.quiz-option:hover{border-color:var(--emerald);background:rgba(4,120,87,0.08)}
+.quiz-option.selected{border-color:var(--emerald);background:rgba(4,120,87,0.12)}
+.quiz-option-radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--gray-text-dark);flex-shrink:0;position:relative;transition:all 0.2s}
+.quiz-option.selected .quiz-option-radio{border-color:var(--emerald);background:var(--emerald)}
+.quiz-option.selected .quiz-option-radio::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--white)}
+.quiz-option-label{font-size:1rem;color:var(--white)}
+.quiz-option-sub{font-size:0.8rem;color:var(--gray-text);margin-left:auto}
+.quiz-nav{display:flex;gap:12px}
+.quiz-nav .btn-secondary{padding:14px 24px}
+.quiz-result{display:none;text-align:center;animation:fadeIn 0.4s}
+.quiz-result.active{display:block}
+.quiz-result-label{font-size:0.85rem;color:var(--gray-text);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.quiz-result-price{font-size:2.5rem;font-weight:800;color:var(--emerald);margin-bottom:8px}
+.quiz-result-detail{font-size:0.95rem;color:var(--gray-text);margin-bottom:28px;line-height:1.6}
+.quiz-result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CATALOG */
+.catalog{background:var(--graphite-dark)}
+.catalog-filters{display:flex;gap:12px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
+.catalog-filter{padding:10px 24px;border-radius:50px;background:var(--graphite-light);border:1px solid var(--border);color:var(--gray-text);cursor:pointer;transition:all 0.2s;font-size:0.9rem;font-weight:500}
+.catalog-filter:hover{color:var(--white);border-color:var(--emerald)}
+.catalog-filter.active{background:var(--emerald);border-color:var(--emerald);color:var(--white)}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.catalog-card{background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.3s ease}
+.catalog-card:hover{transform:translateY(-6px);border-color:var(--emerald);box-shadow:var(--shadow)}
+.catalog-card-img{width:100%;aspect-ratio:3/2;overflow:hidden;position:relative}
+.catalog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.catalog-card:hover .catalog-card-img img{transform:scale(1.06)}
+.catalog-card-badge{position:absolute;top:12px;left:12px;padding:6px 14px;background:rgba(4,120,87,0.92);border-radius:50px;font-size:0.75rem;font-weight:600}
+.catalog-card-body{padding:24px}
+.catalog-card-title{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.catalog-card-specs{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.catalog-card-spec{display:flex;align-items:center;gap:6px;font-size:0.85rem;color:var(--gray-text)}
+.catalog-card-spec strong{color:var(--white);font-weight:600}
+.catalog-card-price{font-size:1.5rem;font-weight:800;color:var(--emerald);margin-bottom:16px}
+.catalog-card-price small{font-size:0.8rem;color:var(--gray-text);font-weight:400}
+.catalog-card-btn{width:100%;padding:12px;border-radius:var(--radius);background:var(--graphite-dark);border:1px solid var(--border);color:var(--white);cursor:pointer;font-weight:600;transition:all 0.2s;font-size:0.9rem}
+.catalog-card-btn:hover{background:var(--emerald);border-color:var(--emerald)}
+
+/* CALCULATOR */
+.calculator{background:var(--graphite)}
+.calc-card{max-width:720px;margin:0 auto;background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow)}
+.calc-type{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
+.calc-type-btn{padding:16px 12px;border-radius:var(--radius);background:var(--graphite-dark);border:2px solid var(--border);color:var(--gray-text);cursor:pointer;transition:all 0.2s;text-align:center}
+.calc-type-btn:hover{border-color:var(--emerald);color:var(--white)}
+.calc-type-btn.active{border-color:var(--emerald);background:rgba(4,120,87,0.12);color:var(--white)}
+.calc-type-name{font-size:0.95rem;font-weight:700;margin-bottom:4px}
+.calc-type-price{font-size:0.8rem;color:var(--gray-text)}
+.calc-type-btn.active .calc-type-price{color:var(--emerald-light)}
+.calc-quantity{margin-bottom:32px}
+.calc-quantity-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.calc-quantity-label span:first-child{font-size:1rem;font-weight:600}
+.calc-quantity-value{font-size:1.5rem;font-weight:800;color:var(--emerald)}
+.calc-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;background:var(--graphite-dark);border-radius:3px;outline:none}
+.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--emerald);cursor:pointer;box-shadow:0 0 0 4px rgba(4,120,87,0.2);transition:transform 0.15s}
+.calc-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+.calc-slider::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--emerald);cursor:pointer;border:none;box-shadow:0 0 0 4px rgba(4,120,87,0.2)}
+.calc-ticks{display:flex;justify-content:space-between;margin-top:8px;font-size:0.75rem;color:var(--gray-text-dark)}
+.calc-discount{display:flex;align-items:center;gap:12px;padding:14px 20px;background:rgba(4,120,87,0.12);border:1px solid rgba(4,120,87,0.3);border-radius:var(--radius);margin-bottom:24px;opacity:0;transform:scale(0.95);transition:all 0.3s}
+.calc-discount.active{opacity:1;transform:scale(1)}
+.calc-discount-icon{width:36px;height:36px;border-radius:50%;background:var(--emerald);display:flex;align-items:center;justify-content:center;color:var(--white);flex-shrink:0;font-weight:700}
+.calc-discount-text{font-size:0.9rem;color:var(--white)}
+.calc-discount-text strong{color:var(--emerald-light)}
+.calc-total{background:var(--graphite-dark);border-radius:var(--radius);padding:24px;display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.calc-total-label{font-size:0.9rem;color:var(--gray-text)}
+.calc-total-old{text-decoration:line-through;color:var(--gray-text-dark);font-size:0.9rem;margin-right:8px}
+.calc-total-price{font-size:2rem;font-weight:800;color:var(--emerald)}
+
+/* PRICING TABLE */
+.pricing{background:var(--graphite-dark)}
+.pricing-table{max-width:800px;margin:0 auto;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.pricing-row{display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;padding:20px 28px;border-bottom:1px solid var(--border);transition:background 0.2s}
+.pricing-row:last-child{border-bottom:none}
+.pricing-row:hover{background:rgba(4,120,87,0.06)}
+.pricing-row.header{background:var(--graphite-light);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--gray-text)}
+.pricing-name{font-size:1rem;font-weight:600}
+.pricing-name small{display:block;font-weight:400;color:var(--gray-text);font-size:0.8rem;margin-top:2px}
+.pricing-price{font-size:1.25rem;font-weight:800;color:var(--emerald);white-space:nowrap}
+.pricing-unit{font-size:0.85rem;color:var(--gray-text);white-space:nowrap}
+.pricing-note{text-align:center;margin-top:24px;font-size:0.85rem;color:var(--gray-text-dark)}
+
+/* ADVANTAGES */
+.advantages{background:var(--graphite)}
+.advantages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.advantage-card{background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;transition:all 0.3s}
+.advantage-card:hover{transform:translateY(-6px);border-color:var(--emerald);box-shadow:var(--shadow)}
+.advantage-icon{width:56px;height:56px;border-radius:var(--radius);background:rgba(4,120,87,0.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--emerald);margin-bottom:20px}
+.advantage-card h3{font-size:1.15rem;margin-bottom:10px}
+.advantage-card p{font-size:0.9rem;color:var(--gray-text);line-height:1.6}
+
+/* STAGES */
+.stages{background:var(--graphite-dark)}
+.stages-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.stage-card{background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 20px;text-align:center;position:relative;transition:all 0.3s}
+.stage-card:hover{transform:translateY(-4px);border-color:var(--emerald)}
+.stage-num{width:44px;height:44px;border-radius:50%;background:var(--emerald);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;margin:0 auto 16px}
+.stage-card h3{font-size:1rem;margin-bottom:8px}
+.stage-card p{font-size:0.82rem;color:var(--gray-text);line-height:1.5}
+
+/* FAQ */
+.faq{background:var(--graphite)}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color 0.2s}
+.faq-item.open{border-color:var(--emerald)}
+.faq-question{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:600;font-size:1rem;background:none;border:none;width:100%;text-align:left;color:var(--white);gap:16px}
+.faq-question:hover{color:var(--emerald-light)}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--graphite-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.3s;font-size:1.1rem}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--emerald)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.faq-answer-inner{padding:0 24px 20px;font-size:0.9rem;color:var(--gray-text);line-height:1.6}
+
+/* CONTACTS */
+.contacts{background:var(--graphite-dark)}
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contacts-info{display:grid;gap:20px}
+.contact-item{display:flex;align-items:center;gap:16px;padding:20px;background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius);transition:all 0.2s}
+.contact-item:hover{border-color:var(--emerald)}
+.contact-icon{width:48px;height:48px;border-radius:var(--radius);background:rgba(4,120,87,0.15);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--emerald);flex-shrink:0}
+.contact-item-label{font-size:0.8rem;color:var(--gray-text)}
+.contact-item-value{font-size:1.05rem;font-weight:600;color:var(--white)}
+.contact-socials{display:flex;gap:12px;margin-top:8px}
+.contact-social{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:var(--radius);background:var(--graphite-light);border:1px solid var(--border);font-size:0.9rem;font-weight:600;transition:all 0.2s}
+.contact-social:hover{border-color:var(--emerald);background:rgba(4,120,87,0.1);transform:translateY(-2px)}
+.contact-form{background:var(--graphite-light);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px}
+.contact-form h3{font-size:1.3rem;margin-bottom:8px}
+.contact-form p{font-size:0.9rem;color:var(--gray-text);margin-bottom:24px}
+.form-field{margin-bottom:16px}
+.form-field label{display:block;font-size:0.85rem;color:var(--gray-text);margin-bottom:6px}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:14px 16px;background:var(--graphite-dark);border:1px solid var(--border);border-radius:var(--radius);color:var(--white);transition:border-color 0.2s}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--emerald)}
+.form-field textarea{resize:vertical;min-height:80px}
+.form-success{display:none;padding:16px 20px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:var(--radius);color:var(--success);font-size:0.9rem;margin-bottom:16px}
+.form-success.active{display:block}
+
+/* FOOTER */
+footer{background:var(--graphite-dark);border-top:1px solid var(--border);padding:40px 0}
+.footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-logo{font-size:1.1rem;font-weight:800;letter-spacing:1px}
+.footer-logo span{color:var(--emerald)}
+.footer-copy{font-size:0.85rem;color:var(--gray-text-dark)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:0.85rem;color:var(--gray-text);transition:color 0.2s}
+.footer-links a:hover{color:var(--emerald-light)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-content{grid-template-columns:1fr}
+  .hero-image{max-width:480px;margin:0 auto;width:100%}
+  .advantages-grid{grid-template-columns:1fr 1fr}
+  .stages-grid{grid-template-columns:repeat(3,1fr)}
+  .contacts-grid{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--graphite-dark);flex-direction:column;padding:20px;gap:16px;border-bottom:1px solid var(--border)}
+  .nav-links.open{display:flex}
+  .nav-links a{width:100%;text-align:center}
+  .nav-phone{display:none}
+  .nav-burger{display:flex}
+  .hero-advantages{grid-template-columns:1fr}
+  .calc-type{grid-template-columns:1fr}
+  .advantages-grid{grid-template-columns:1fr}
+  .stages-grid{grid-template-columns:1fr 1fr}
+  .pricing-row{grid-template-columns:1fr;gap:4px}
+  .pricing-row.header{display:none}
+  .pricing-row .pricing-price,.pricing-row .pricing-unit{text-align:left}
+  .quiz-card,.calc-card,.contact-form{padding:24px}
+  section{padding:56px 0}
+  .footer-content{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .stages-grid{grid-template-columns:1fr}
+  .hero-buttons{flex-direction:column}
+  .hero-buttons .btn{width:100%}
+  .quiz-nav{flex-direction:column-reverse}
+  .quiz-nav .btn{width:100%}
+}
+</style>
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2315191d'/%3E%3Cpath d='M22 84V42L50 18L78 42V84' fill='none' stroke='%23ffffff' stroke-width='11'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="nav-logo"><svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org" style="flex-shrink:0"><path d="M22 86V42L50 18L78 42V86" stroke="#ffffff" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/></svg><span>ТЕПЛО<span>КОНТУР</span></span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#quiz">Расчёт</a>
+        <a href="#catalog">Проекты</a>
+        <a href="#calculator">Калькулятор</a>
+        <a href="#pricing">Цены</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <a href="tel:+79043129273" class="nav-phone">+7 904 312 92 73</a>
+      <button class="nav-burger" id="navBurger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-tag"><span class="hero-tag-dot"></span> Глазов и Удмуртия</div>
+        <h1>Тёплые дома из <span>СИП-панелей</span> под ключ от производителя</h1>
+        <p class="hero-sub">Строим энергоэффективные дома круглогодично. Производим СИП-панели и домокомплекты на собственном заводе — без посредников и наценок.</p>
+        <div class="hero-advantages">
+          <div class="hero-adv"><span class="hero-adv-icon">★</span> От производителя</div>
+          <div class="hero-adv"><span class="hero-adv-icon">⚡</span> За 30 дней</div>
+          <div class="hero-adv"><span class="hero-adv-icon">◈</span> Экономия на отоплении до 70%</div>
+          <div class="hero-adv"><span class="hero-adv-icon">✓</span> Гарантия 10 лет</div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#quiz" class="btn btn-primary">Рассчитать стоимость</a>
+          <a href="#catalog" class="btn btn-secondary">Каталог проектов</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.pexels.com/photos/7031411/pexels-photo-7031411.jpeg?auto=compress&cs=tinysrgb&w=800" fetchpriority="high" decoding="async alt="Тёплый дом из СИП-панелей">
+        <div class="hero-badge">
+          <div>
+            <div class="hero-badge-num">30 дней</div>
+            <div class="hero-badge-text">средний срок строительства</div>
+          </div>
+          <div>
+            <div class="hero-badge-num">10 лет</div>
+            <div class="hero-badge-text">гарантия на дом</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz" id="quiz">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Квиз</span>
+      <h2>Рассчитайте стоимость дома за 1 минуту</h2>
+      <p>Ответьте на 4 простых вопроса и получите предварительный расчёт стоимости вашего будущего дома</p>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgress"></div></div>
+        <span class="quiz-progress-text" id="quizProgressText">Шаг 1 из 4</span>
+      </div>
+
+      <div class="quiz-step active" data-step="1">
+        <div class="quiz-question">Какая площадь дома вам нужна?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="up80"><div class="quiz-option-radio"></div><span class="quiz-option-label">До 80 м²</span><span class="quiz-option-sub">компактный</span></div>
+          <div class="quiz-option" data-value="80-120"><div class="quiz-option-radio"></div><span class="quiz-option-label">80–120 м²</span><span class="quiz-option-sub">оптимальный</span></div>
+          <div class="quiz-option" data-value="over120"><div class="quiz-option-radio"></div><span class="quiz-option-label">Свыше 120 м²</span><span class="quiz-option-sub">просторный</span></div>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn btn-primary" id="quizNext" disabled>Далее</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="2">
+        <div class="quiz-question">Какой тип дома вы планируете?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="house-kit"><div class="quiz-option-radio"></div><span class="quiz-option-label">Домокомплект</span><span class="quiz-option-sub">от 9 500 ₽/м²</span></div>
+          <div class="quiz-option" data-value="warm-circuit"><div class="quiz-option-radio"></div><span class="quiz-option-label">Тёплый контур</span><span class="quiz-option-sub">от 21 500 ₽/м²</span></div>
+          <div class="quiz-option" data-value="turnkey"><div class="quiz-option-radio"></div><span class="quiz-option-label">Дом под ключ</span><span class="quiz-option-sub">от 34 000 ₽/м²</span></div>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn btn-secondary" id="quizPrev2">Назад</button>
+          <button class="btn btn-primary" id="quizNext2" disabled>Далее</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="3">
+        <div class="quiz-question">Когда планируете начать строительство?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="1-3"><div class="quiz-option-radio"></div><span class="quiz-option-label">В течение 1–3 месяцев</span></div>
+          <div class="quiz-option" data-value="3-6"><div class="quiz-option-radio"></div><span class="quiz-option-label">В течение 3–6 месяцев</span></div>
+          <div class="quiz-option" data-value="later"><div class="quiz-option-radio"></div><span class="quiz-option-label">Пока присматриваюсь</span></div>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn btn-secondary" id="quizPrev3">Назад</button>
+          <button class="btn btn-primary" id="quizNext3" disabled>Далее</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="4">
+        <div class="quiz-question">Нужна ли отделка под ключ?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="yes"><div class="quiz-option-radio"></div><span class="quiz-option-label">Да, полная отделка</span></div>
+          <div class="quiz-option" data-value="partial"><div class="quiz-option-radio"></div><span class="quiz-option-label">Черновая отделка</span></div>
+          <div class="quiz-option" data-value="no"><div class="quiz-option-radio"></div><span class="quiz-option-label">Без отделки</span></div>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn btn-secondary" id="quizPrev4">Назад</button>
+          <button class="btn btn-primary" id="quizFinish" disabled>Получить расчёт</button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quizResult">
+        <div class="quiz-result-label">Предварительная стоимость</div>
+        <div class="quiz-result-price" id="quizResultPrice">—</div>
+        <div class="quiz-result-detail" id="quizResultDetail">Расчёт готов!</div>
+        <div class="quiz-result-actions">
+          <a href="#contacts" class="btn btn-primary">Оставить заявку</a>
+          <button class="btn btn-secondary" id="quizRestart">Пройти заново</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="catalog" id="catalog">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Каталог</span>
+      <h2>Типовые проекты домов</h2>
+      <p>Выберите проект по площади. Все дома можно адаптировать под ваши пожелания</p>
+    </div>
+    <div class="catalog-filters">
+      <button class="catalog-filter active" data-filter="all">Все проекты</button>
+      <button class="catalog-filter" data-filter="up80">До 80 м²</button>
+      <button class="catalog-filter" data-filter="80-120">80–120 м²</button>
+      <button class="catalog-filter" data-filter="over120">Свыше 120 м²</button>
+    </div>
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator" id="calculator">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Калькулятор</span>
+      <h2>Расчёт стоимости СИП-панелей</h2>
+      <p>Выберите толщину панели и количество. При заказе от 30 штук — скидка 7%</p>
+    </div>
+    <div class="calc-card">
+      <div class="calc-type" id="calcType">
+        <button class="calc-type-btn active" data-thickness="124" data-price="4200">
+          <div class="calc-type-name">124 мм</div>
+          <div class="calc-type-price">от 4 200 ₽/шт</div>
+        </button>
+        <button class="calc-type-btn" data-thickness="174" data-price="4850">
+          <div class="calc-type-name">174 мм</div>
+          <div class="calc-type-price">от 4 850 ₽/шт</div>
+        </button>
+        <button class="calc-type-btn" data-thickness="224" data-price="5400">
+          <div class="calc-type-name">224 мм</div>
+          <div class="calc-type-price">от 5 400 ₽/шт</div>
+        </button>
+      </div>
+      <div class="calc-quantity">
+        <div class="calc-quantity-label">
+          <span>Количество панелей</span>
+          <span class="calc-quantity-value" id="calcQtyValue">10 шт</span>
+        </div>
+        <input type="range" class="calc-slider" id="calcSlider" min="1" max="100" value="10">
+        <div class="calc-ticks">
+          <span>1</span><span>25</span><span>50</span><span>75</span><span>100</span>
+        </div>
+      </div>
+      <div class="calc-discount" id="calcDiscount">
+        <div class="calc-discount-icon">%</div>
+        <div class="calc-discount-text">Применена <strong>скидка 7%</strong> при заказе от 30 штук</div>
+      </div>
+      <div class="calc-total">
+        <div>
+          <div class="calc-total-label">Итого к оплате</div>
+          <div id="calcOldPrice" style="display:none"><span class="calc-total-old" id="calcOldPriceValue"></span></div>
+        </div>
+        <div class="calc-total-price" id="calcTotalPrice">42 000 ₽</div>
+      </div>
+      <a href="#contacts" class="btn btn-primary btn-full">Заказать СИП-панели</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Цены</span>
+      <h2>Расценки на продукцию и услуги</h2>
+      <p>Прозрачные цены от производителя без скрытых платежей</p>
+    </div>
+    <div class="pricing-table">
+      <div class="pricing-row header">
+        <div>Наименование</div>
+        <div>Цена</div>
+        <div>Ед.</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-name">СИП-панель 174 мм<small>толщина 174 мм, стандартный размер</small></div>
+        <div class="pricing-price">от 4 850 ₽</div>
+        <div class="pricing-unit">/ шт</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-name">СИП-панель 224 мм<small>толщина 224 мм, усиленная теплоизоляция</small></div>
+        <div class="pricing-price">от 5 400 ₽</div>
+        <div class="pricing-unit">/ шт</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-name">Домокомплект<small>набор СИП-панелей для самостоятельной сборки</small></div>
+        <div class="pricing-price">от 9 500 ₽</div>
+        <div class="pricing-unit">/ м²</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-name">Тёплый контур<small>коробка дома: фундамент, стены, кровля, окна, двери</small></div>
+        <div class="pricing-price">от 21 500 ₽</div>
+        <div class="pricing-unit">/ м²</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-name">Дом под ключ<small>полностью готовый к проживанию дом с отделкой</small></div>
+        <div class="pricing-price">от 34 000 ₽</div>
+        <div class="pricing-unit">/ м²</div>
+      </div>
+    </div>
+    <p class="pricing-note">Указаны базовые цены. Итоговая стоимость зависит от проекта, материалов отделки и региона строительства.</p>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="advantages" id="advantages">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Преимущества</span>
+      <h2>Почему выбирают ТЕПЛОКОНТУР</h2>
+    </div>
+    <div class="advantages-grid">
+      <div class="advantage-card"><div class="advantage-icon">🏭</div><h3>Собственное производство</h3><p>Производим СИП-панели на своём заводе. Вы покупаете напрямую от производителя — без посредников.</p></div>
+      <div class="advantage-card"><div class="advantage-icon">⚡</div><h3>Скорость строительства</h3><p>Дом из СИП-панелей возводится за 30 дней. Не ждём сезонов — строим круглый год.</p></div>
+      <div class="advantage-card"><div class="advantage-icon">🔥</div><h3>Энергоэффективность</h3><p>СИП-панели сохраняют тепло лучше кирпича. Экономия на отоплении — до 70% в год.</p></div>
+      <div class="advantage-card"><div class="advantage-icon">🛡</div><h3>Гарантия 10 лет</h3><p>Даём официальную гарантию на конструкцию дома и качество материалов.</p></div>
+      <div class="advantage-card"><div class="advantage-icon">📐</div><h3>Проект под вас</h3><p>Типовой или индивидуальный проект. Адаптируем планировку под ваш образ жизни.</p></div>
+      <div class="advantage-card"><div class="advantage-icon">💰</div><h3>Честная цена</h3><p>Фиксированная стоимость в договоре. Никаких доплат в процессе строительства.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STAGES -->
+<section class="stages" id="stages">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Этапы</span>
+      <h2>Как мы строим ваш дом</h2>
+      <p>Прозрачный процесс — от первой заявки до получения ключей</p>
+    </div>
+    <div class="stages-grid">
+      <div class="stage-card"><div class="stage-num">1</div><h3>Заявка и проект</h3><p>Обсуждаем пожелания, подбираем или создаём проект дома</p></div>
+      <div class="stage-card"><div class="stage-num">2</div><h3>Расчёт и договор</h3><p>Считаем смету, фиксируем цену и сроки в договоре</p></div>
+      <div class="stage-card"><div class="stage-num">3</div><h3>Производство</h3><p>Изготавливаем СИП-панели и домокомплект на заводе</p></div>
+      <div class="stage-card"><div class="stage-num">4</div><h3>Монтаж</h3><p>Собираем дом на участке за 2–4 недели</p></div>
+      <div class="stage-card"><div class="stage-num">5</div><h3>Сдача</h3><p>Передаём готовый дом, даём ключи и гарантию</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Вопросы</span>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Чем СИП-панели лучше других материалов?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">СИП-панели сочетают высокую теплоизоляцию, прочность и скорость монтажа. Дом из СИП обходится дешевле кирпичного, строится в 3–5 раз быстрее и экономит до 70% на отоплении.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Можно ли строить зимой?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Да. Технология СИП-панелей не требует мокрых процессов (бетонирования, кладки), поэтому монтаж возможен при любой температуре круглый год.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Какой срок службы у дома из СИП-панелей?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">При правильной эксплуатации дом из качественных СИП-панелей служит 50+ лет. Мы используем панели собственного производства и даём гарантию 10 лет на конструкцию.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Нужен ли тяжёлый фундамент?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Нет. Дома из СИП-панелей в 3–4 раза легче кирпичных, поэтому достаточно лёгкого фундамента — свайно-винтового или мелкозаглублённого ленточного. Это экономит деньги и время.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Вы работаете по всей Удмуртии?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Да, мы строим в Глазове, Ижевске и по всей Удмуртской Республике. Также возможен выезд в соседние регионы — обсудим индивидуально.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Можно ли купить только домокомплект без монтажа?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Да. Мы продаём СИП-панели и домокомплекты от производителя. Вы можете собрать дом самостоятельно или силами своего подрядчика. Цена домокомплекта — от 9 500 ₽/м².</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="contacts" id="contacts">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Контакты</span>
+      <h2>Свяжитесь с нами</h2>
+      <p>Оставьте заявку — перезвоним в течение 15 минут и ответим на все вопросы</p>
+    </div>
+    <div class="contacts-grid">
+      <div class="contacts-info">
+        <a href="tel:+79043129273" class="contact-item">
+          <div class="contact-icon">☎</div>
+          <div><div class="contact-item-label">Телефон</div><div class="contact-item-value">+7 904 312 92 73</div></div>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-item-label">Регион работы</div><div class="contact-item-value">Глазов и Удмуртия</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div><div class="contact-item-label">Telegram</div><div class="contact-item-value">@teplokontur</div></div>
+        </div>
+        <div class="contact-socials">
+          <a href="https://vk.com" target="_blank" rel="noopener" class="contact-social">ВКонтакте</a>
+          <a href="https://max.ru" target="_blank" rel="noopener" class="contact-social">MAX</a>
+          <a href="https://t.me/teplokontur" target="_blank" rel="noopener" class="contact-social">Telegram</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <h3>Оставить заявку</h3>
+        <p>Заполните форму, и мы свяжемся с вами для бесплатной консультации</p>
+        <div class="form-success" id="formSuccess">Спасибо! Ваша заявка отправлена. Мы перезвоним в течение 15 минут.</div>
+        <div class="form-field">
+          <label for="formName">Ваше имя</label>
+          <input type="text" id="formName" placeholder="Как к вам обращаться" required>
+        </div>
+        <div class="form-field">
+          <label for="formPhone">Телефон</label>
+          <input type="tel" id="formPhone" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <div class="form-field">
+          <label for="formType">Что вас интересует</label>
+          <select id="formType">
+            <option value="house">Строительство дома под ключ</option>
+            <option value="warm-circuit">Тёплый контур</option>
+            <option value="house-kit">Домокомплект</option>
+            <option value="sip-panels">СИП-панели</option>
+            <option value="consult">Консультация</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="formMessage">Комментарий (необязательно)</label>
+          <textarea id="formMessage" placeholder="Расскажите о вашем проекте"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container"><div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+  <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org" style="flex-shrink:0">
+    <path d="M22 86V42L50 18L78 42V86" stroke="#ffffff" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
+  </svg>
+  <div>
+    <div style="font-weight:800;letter-spacing:3px;color:#ffffff;font-size:1.15rem;line-height:1.2">ТЕПЛОКОНТУР</div>
+    <div style="font-size:0.7rem;color:#b0b8bf;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px">ТЁПЛЫЙ ДОМ — ОТ ПАНЕЛИ ДО КЛЮЧЕЙ</div>
+  </div>
+</div>
+    <div class="footer-content">
+      <div class="footer-logo"><span>ТЕПЛО<span>КОНТУР</span></span></div>
+      <div class="footer-links">
+        <a href="#quiz">Расчёт</a>
+        <a href="#catalog">Проекты</a>
+        <a href="#calculator">Калькулятор</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <div class="footer-copy">© 2026 ТЕПЛОКОНТУР. Глазов, Удмуртия.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// HEADER SCROLL
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20)});
+
+// MOBILE MENU
+const navBurger=document.getElementById('navBurger');
+const navLinks=document.getElementById('navLinks');
+navBurger.addEventListener('click',()=>{navBurger.classList.toggle('open');navLinks.classList.toggle('open')});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navBurger.classList.remove('open');navLinks.classList.remove('open')}));
+
+// QUIZ
+const quizData={area:null,type:null,timing:null,finish:null};
+const quizSteps=document.querySelectorAll('.quiz-step');
+const quizProgress=document.getElementById('quizProgress');
+const quizProgressText=document.getElementById('quizProgressText');
+let currentStep=1;
+
+function selectOption(stepEl,dataKey){
+  const options=stepEl.querySelectorAll('.quiz-option');
+  options.forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      options.forEach(o=>o.classList.remove('selected'));
+      opt.classList.add('selected');
+      quizData[dataKey]=opt.dataset.value;
+      const nextBtn=stepEl.querySelector('.btn-primary');
+      if(nextBtn)nextBtn.disabled=false;
+    });
+  });
+}
+selectOption(quizSteps[0],'area');
+selectOption(quizSteps[1],'type');
+selectOption(quizSteps[2],'timing');
+selectOption(quizSteps[3],'finish');
+
+function goToStep(n){
+  quizSteps.forEach(s=>s.classList.remove('active'));
+  const target=document.querySelector(`.quiz-step[data-step="${n}"]`);
+  if(target)target.classList.add('active');
+  currentStep=n;
+  const pct=n/4*100;
+  quizProgress.style.width=pct+'%';
+  quizProgressText.textContent=`Шаг ${n} из 4`;
+}
+function bindNext(btnId,step){document.getElementById(btnId).addEventListener('click',()=>goToStep(step))}
+bindNext('quizNext',2);
+document.getElementById('quizPrev2').addEventListener('click',()=>goToStep(1));
+document.getElementById('quizNext2').addEventListener('click',()=>goToStep(3));
+document.getElementById('quizPrev3').addEventListener('click',()=>goToStep(2));
+document.getElementById('quizNext3').addEventListener('click',()=>goToStep(4));
+document.getElementById('quizPrev4').addEventListener('click',()=>goToStep(3));
+
+document.getElementById('quizFinish').addEventListener('click',()=>{
+  const areaMap={'up80':65,'80-120':100,'over120':140};
+  const typeMap={'house-kit':9500,'warm-circuit':21500,'turnkey':34000};
+  const area=areaMap[quizData.area]||100;
+  const pricePerM=typeMap[quizData.type]||21500;
+  let total=area*pricePerM;
+  if(quizData.finish==='yes'&&quizData.type!=='turnkey')total*=1.15;
+  else if(quizData.finish==='no'&&quizData.type==='turnkey')total*=0.85;
+  const low=Math.round(total*0.9);
+  const high=Math.round(total*1.1);
+  quizSteps.forEach(s=>s.classList.remove('active'));
+  const result=document.getElementById('quizResult');
+  result.classList.add('active');
+  quizProgress.style.width='100%';
+  quizProgressText.textContent='Готово!';
+  document.getElementById('quizResultPrice').textContent=`${formatNum(low)} – ${formatNum(high)} ₽`;
+  const typeLabels={'house-kit':'домокомплект','warm-circuit':'тёплый контур','turnkey':'дом под ключ'};
+  const finishLabels={'yes':'с полной отделкой','partial':'с черновой отделкой','no':'без отделки'};
+  document.getElementById('quizResultDetail').textContent=
+    `Дом ~${area} м², ${typeLabels[quizData.type]||''}, ${finishLabels[quizData.finish]||''}. Расчёт предварительный — точная смета формируется после уточнения проекта.`;
+});
+
+document.getElementById('quizRestart').addEventListener('click',()=>{
+  quizData.area=null;quizData.type=null;quizData.timing=null;quizData.finish=null;
+  document.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));
+  document.querySelectorAll('.quiz-step .btn-primary').forEach(b=>b.disabled=true);
+  document.getElementById('quizResult').classList.remove('active');
+  goToStep(1);
+});
+
+function formatNum(n){return Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ')}
+
+// CATALOG
+const projects=[
+  {id:1,name:'Классика 65',area:65,floors:1,rooms:2,filter:'up80',img:'https://yandex.net',price:'615 000'},
+  {id:2,name:'Уют 75',area:75,floors:1,rooms:2,filter:'up80',img:'https://yandex.net',price:'712 000'},
+  {id:3,name:'Оптима 90',area:90,floors:1,rooms:3,filter:'80-120',img:'https://yandex.net',price:'1 935 000'},
+  {id:4,name:'Фаворит 105',area:105,floors:1,rooms:3,filter:'80-120',img:'https://yandex.net',price:'2 257 000'},
+  {id:5,name:'Премиум 115',area:115,floors:1,rooms:4,filter:'80-120',img:'https://yandex.net',price:'2 472 000'},
+  {id:6,name:'Максимал 130',area:130,floors:2,rooms:4,filter:'over120',img:'https://yandex.net',price:'4 420 000'},
+  {id:7,name:'Гранд 145',area:145,floors:2,rooms:5,filter:'over120',img:'https://yandex.net',price:'4 930 000'},
+  {id:8,name:'Династия 160',area:160,floors:2,rooms:5,filter:'over120',img:'https://yandex.net',price:'5 440 000'}
+];
+function renderCatalog(filter){
+  const grid=document.getElementById('catalogGrid');
+  const filtered=filter==='all'?projects:projects.filter(p=>p.filter===filter);
+  grid.innerHTML=filtered.map(p=>`
+    <div class="catalog-card">
+      <div class="catalog-card-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        <div class="catalog-card-badge">${p.area} м²</div>
+      </div>
+      <div class="catalog-card-body">
+        <div class="catalog-card-title">${p.name}</div>
+        <div class="catalog-card-specs">
+          <div class="catalog-card-spec">площадь: <strong>${p.area} м²</strong></div>
+          <div class="catalog-card-spec">этажей: <strong>${p.floors}</strong></div>
+          <div class="catalog-card-spec">комнат: <strong>${p.rooms}</strong></div>
+        </div>
+        <div class="catalog-card-price">от ${p.price} ₽ <small>под ключ</small></div>
+        <button class="catalog-card-btn" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">Выбрать проект</button>
+      </div>
+    </div>`).join('');
+}
+renderCatalog('all');
+document.querySelectorAll('.catalog-filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.catalog-filter').forEach(f=>f.classList.remove('active'));
+    btn.classList.add('active');
+    renderCatalog(btn.dataset.filter);
+  });
+});
+
+// CALCULATOR
+let calcThickness=124,calcPrice=4200,calcQty=10;
+const calcSlider=document.getElementById('calcSlider');
+const calcQtyValue=document.getElementById('calcQtyValue');
+const calcTotalPrice=document.getElementById('calcTotalPrice');
+const calcOldPrice=document.getElementById('calcOldPrice');
+const calcOldPriceValue=document.getElementById('calcOldPriceValue');
+const calcDiscount=document.getElementById('calcDiscount');
+
+document.querySelectorAll('.calc-type-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.calc-type-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    calcThickness=parseInt(btn.dataset.thickness);
+    calcPrice=parseInt(btn.dataset.price);
+    updateCalc();
+  });
+});
+calcSlider.addEventListener('input',()=>{calcQty=parseInt(calcSlider.value);updateCalc()});
+
+function updateCalc(){
+  calcQtyValue.textContent=calcQty+' шт';
+  let total=calcPrice*calcQty;
+  if(calcQty>=30){
+    const discounted=Math.round(total*0.93);
+    calcDiscount.classList.add('active');
+    calcOldPrice.style.display='block';
+    calcOldPriceValue.textContent=formatNum(total)+' ₽';
+    total=discounted;
+  }else{
+    calcDiscount.classList.remove('active');
+    calcOldPrice.style.display='none';
+  }
+  calcTotalPrice.textContent=formatNum(total)+' ₽';
+}
+updateCalc();
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q=item.querySelector('.faq-question');
+  const a=item.querySelector('.faq-answer');
+  q.addEventListener('click',()=>{
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight=null;
+    });
+    if(!isOpen){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('formName').value.trim();
+  const phone=document.getElementById('formPhone').value.trim();
+  if(!name||!phone)return;
+  document.getElementById('formSuccess').classList.add('active');
+  this.reset();
+  setTimeout(()=>document.getElementById('formSuccess').classList.remove('active'),6000);
+});
+</script>
+
+
+
+
+<script>
+(function() {
+  const MAX_PROFILE = "https://max.ru";
+
+  document.addEventListener("click", function(e) {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    const txt = (btn.innerText || "").toLowerCase();
+    if (txt.includes("отправить") || txt.includes("получить") || txt.includes("расчёт") || txt.includes("рассчитать")) {
+      const box = btn.closest("form") || btn.closest(".quiz-card") || btn.parentElement;
+      if (!box) return;
+
+      const fields = box.querySelectorAll("input, select, textarea");
+      let lines = ["Здравствуйте! Хочу оставить заявку с сайта ТЕПЛОКОНТУР:"];
+      let hasData = false;
+
+      fields.forEach(el => {
+        if (el.type === "submit" || el.type === "button") return;
+        const val = (el.value || "").trim();
+        if (!val) return;
+        hasData = true;
+        const label = el.placeholder || el.name || "Поле";
+        lines.push("• " + label + ": " + val);
+      });
+
+      const quizBox = box.closest(".quiz-card, .quiz");
+      if (quizBox) {
+        const resText = quizBox.querySelector(".quiz-result")?.innerText;
+        if (resText) {
+          hasData = true;
+          lines.push("", "Данные квиза:", resText.slice(0, 300));
+        }
+      }
+
+      if (!hasData) return;
+
+      const fullText = lines.join("\n");
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(fullText).catch(() => {});
+      }
+
+      alert("✅ Текст вашей заявки скопирован! Сейчас откроется чат в MAX — просто вставьте сообщение (Ctrl+V) и отправьте.");
+      window.open(MAX_PROFILE + "?text=" + encodeURIComponent(fullText), "_blank");
+    }
+  }, true);
+})();
+</script>
+
+<script>
+document.addEventListener("error", function(e) {
+  if (e.target.tagName === "IMG" && !e.target.dataset.retried) {
+    e.target.dataset.retried = "1";
+    e.target.src = "https://yandex.net";
+  }
+}, true);
+</script>
+</body>
+</html>
